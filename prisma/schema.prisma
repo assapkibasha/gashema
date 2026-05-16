@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
 }
 
 enum Role {
@@ -54,7 +54,7 @@ model Laptop {
   stock         Int
   featured      Boolean  @default(false)
   category      String
-  images        String[]
+  images        Json
   reviews       Review[]
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
